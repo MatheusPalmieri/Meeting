@@ -2,24 +2,9 @@
 
 var nameMeeting = document.getElementById('nameMeeting')
 var buttonSubmit = document.getElementById('buttonSubmit')
-var form = document.getElementById('form')
 var link = document.getElementById('link')
 
-form.addEventListener('submit', createLink)
-
-function createLink(e) {
-    var string = geraStringAleatoria(3)
-
-    console.log(`Nome da reunião: ${nameMeeting.value}`)
-    console.log(`String gerada: ${string}`)
-
-    console.log(`Link gerado: https://meet.jit.si/${string + nameMeeting.value}`)
-    link.href = `https://meet.jit.si/${string + nameMeeting.value}`
-
-
-
-    e.preventDefault()
-}
+buttonSubmit.addEventListener('click', createLink)
 
 function geraStringAleatoria(tamanho) {
     var stringAleatoria = '';
@@ -29,3 +14,23 @@ function geraStringAleatoria(tamanho) {
     }
     return stringAleatoria;
 }
+
+function getDate() {
+    
+}
+
+function createLink(e) {
+    var string = geraStringAleatoria(10)
+
+    // Apenas para desenvolvimento
+    console.log(`Nome da reunião: ${nameMeeting.value}`)
+    console.log(`String gerada: ${string}`)
+    console.log(`Link gerado: https://meet.jit.si/${string + nameMeeting.value}`)
+
+
+    link.href = `https://meet.jit.si/${string + nameMeeting.value}`
+    link.style.display = 'block'
+    e.preventDefault()
+}
+
+

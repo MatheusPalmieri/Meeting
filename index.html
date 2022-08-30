@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Reunião</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <main>
-        <section>
-            <article>
+        <section class="container">
+            <article class="generator">
+                <input type="text" name="name" id="nameMeeting" class="name-meeting" value>
 
-                <form id="form">
-                    <input type="text" name="name" id="nameMeeting" class="name-meeting" value>
-
-                    <input type="submit" id="buttonSubmit">
-                </form>
+                <button type="submit" id="buttonSubmit">Gerar Link de Reunião</button>
                 
                 <div>
                     <span>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" id="link">link gerado</a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer" id="link" class="link">link gerado</a>
                     </span>
                 </div>
 
