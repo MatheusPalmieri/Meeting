@@ -1,33 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Reunião</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
     <main>
         <section class="container">
-            <article class="generator">
-                <input type="text" name="name" id="nameMeeting" class="name-meeting" value>
 
-                <button type="submit" id="buttonSubmit">Gerar Link de Reunião</button>
+            <!-- Card -->
+
+            <div class="content">
+
+                <h1 class="title">Prepare-se para sua Reunião.</h1>
+
+                <!-- Generator Link -->
                 
-                <div>
-                    <span>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" id="link" class="link">link gerado</a>
-                    </span>
-                </div>
+                <article class="generator" id="generator">
+                    <form id="form" class="form" autocomplete="off">
+                        <input
+                            aria-label="Campo nome reunião"
+                            type="text" name="name" id="nameMeeting" class="name-meeting" value 
+                            title="Nome da reunião não deve conter qualquer um destes caracteres: ?. &, :, ', &quot;, %, #." placeholder="Reunião FG"
+                        >
 
-            </article>
+                        <input type="submit" id="buttonSubmit" class="button" value="Gerar Link de Reunião">
+                    </form>
+                </article>
+
+                <!-- Result Link -->
+
+                <article class="generated-link" id="generatedLink">
+                    <input type="text" name="name" id="linkResult" class="link-result" value readonly>
+                    
+                    <button id="copyLinkMeeting" class="button">Copiar Link</button>
+                </article>
+
+            </div>
+            
+            <footer class="footer">
+                <p id="footer">
+                    <!-- inject for js -->
+                </p>
+            </footer>
+
         </section>
     </main>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="javascript/footer.js"></script>
+    <script src="javascript/functionButtons.js"></script>
+    <script src="javascript/generatorLink.js"></script>
+
 </body>
 </html>
