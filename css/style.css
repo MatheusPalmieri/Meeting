@@ -67,8 +67,7 @@
     border-radius: 3px;
     padding: 14px 18px;
     margin-right: 4px;
-    transition: background-color .7s;
-    transition: padding .2s;
+    transition: .5s;
 }
 
 .button:hover {
@@ -102,10 +101,10 @@
     color: #111;
     font-size: 14px;
     padding: 0 5px;
-    height: 44px;
+    height: 50px;
     width: 68%;
     border-radius: 3px;
-    transition: width .3s;
+    transition: width .2s;
 }
 
 .generator {

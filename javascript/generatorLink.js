@@ -2,7 +2,6 @@
 
 var nameMeeting = document.querySelector('#nameMeeting').value
 var linkResult = document.querySelector('#linkResult')
-// var buttonSubmit = document.getElementById('buttonSubmit')
 var generator = document.getElementById('generator')
 var generatedLink = document.getElementById('generatedLink')
 var form = document.getElementById('form')
@@ -42,7 +41,7 @@ function verifyNameMeeting() {
 
 function setError(){
     var field = document.getElementById('nameMeeting')
-    field.style.border = '2px solid #e63636'
+    field.style.border = '3px solid #e63636'
 }
 
 function removeError(){
@@ -60,6 +59,7 @@ function createLink(event) {
     var string = getRandomKey(10)
     var date = getDate()
     var nameMeeting = document.querySelector('#nameMeeting').value
+    nameMeeting = nameMeeting.split(" ").join("")
 
     // Apenas para desenvolvimento
 
@@ -70,13 +70,8 @@ function createLink(event) {
     console.log('-----')
     console.log(`Link gerado: https://meet.jit.si/${string + date + nameMeeting}`)
     console.log('-----')
-    // link.href = `https://meet.jit.si/${string + date + nameMeeting}`
-    // link.style.display = 'block'
 
     linkResult.value = `https://meet.jit.si/${string + date + nameMeeting}`
     generator.style.display = 'none'
     generatedLink.style.display = 'flex'
-}
-
-function initMeeting(event) {
 }
