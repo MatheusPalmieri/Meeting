@@ -8,5 +8,4 @@ function copyLink() {
     document.execCommand("Copy");
 
     buttonCopy.textContent = 'Link Copiado'
-    linkResult.style.width = '67%'
 }

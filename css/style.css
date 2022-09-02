@@ -5,55 +5,64 @@
     margin: 0;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
+body {
     background-color: rgb(240, 240, 240);
+}
+
+.container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* Mobile Responsive */
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    background-color: #328990;
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 350px;
+    height: 200px;
+    transition: height .5s;
 }
 
 .title {
     text-align: center;
     color: #fff;
-    padding: 15px 0;
-}
-
-.content {
-    background-color: #328990;
-    border-radius: 4px;
-    padding: 10px;
-    width: 400px;
-    height: auto;
+    margin-bottom: 30px;
+    font-size: 1.42em;
 }
 
 .form {
-    background-color: #fff;
-    border-radius: 4px;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .name-meeting {
-    background: none;
     outline: none;
-    border: none;
+    background: #fff;
     color: #111;
-    font-size: 14px;
+    font-size: 16px;
+    height: 50px;
+    width: 300px;
     padding: 0 5px;
-    height: 44px;
-    border-radius: 3px;
-    margin-left: 4px;
+    border-radius: 5px;
     border: 3px solid #fff;
     transition: border-color .6s;
 }
 
 .name-meeting:focus {
-    border: 3px solid #0074e0;
+    border: 2px solid #0074e0;
 }
 
 /* Button Global */
@@ -61,12 +70,13 @@
 .button {
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    margin-top: 15px;
     color: #fff;
+    font-size: 16px;
     background-color: #0982f3;
-    border-radius: 3px;
-    padding: 14px 18px;
-    margin-right: 4px;
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
     transition: .5s;
 }
 
@@ -74,15 +84,22 @@
     background-color: #0074e0;
 }
 
-.link {
-    display: none;
+.button-link {
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0982f3;
+    border-radius: 5px;
+    width: 300px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: .5s;
 }
 
-.footer {
-    position: absolute;
-    bottom: 20px;
-    color: #bbb;
-}
+
 
 /* -------------- */
 /* Generated Link */
@@ -91,11 +108,12 @@
 .generated-link {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     display: none;
 }
 
 .link-result {
-    outline: none;
+    /* outline: none;
     border: none;
     background-color: #eee;
     color: #111;
@@ -104,5 +122,18 @@
     height: 50px;
     width: 68%;
     border-radius: 3px;
-    transition: width .2s;
+    transition: width .2s; */
+}
+
+.footer {
+    font-size: 14px;
+    position: absolute;
+    bottom: 20px;
+    color: #bbb;
+}
+
+/* Features */
+
+.recents {
+    display: none;
 }

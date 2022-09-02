@@ -2,9 +2,11 @@
 
 var nameMeeting = document.querySelector('#nameMeeting').value
 var linkResult = document.querySelector('#linkResult')
+var buttonOpen = document.getElementById('openLinkMeeting')
 var generator = document.getElementById('generator')
 var generatedLink = document.getElementById('generatedLink')
 var form = document.getElementById('form')
+var card = document.getElementById('card')
 
 form.addEventListener('submit', createLink)
 
@@ -33,21 +35,27 @@ function getDate() {
     return formattedDate
 }
 
+// Name Validated
+
 function verifyNameMeeting() {
     var content = document.querySelector("#nameMeeting").value.length
 
     if (content > 1 ) { return true } else { return false } 
 }
 
+// Style
+
+var field = document.getElementById('nameMeeting')
+
 function setError(){
-    var field = document.getElementById('nameMeeting')
-    field.style.border = '3px solid #e63636'
+    field.style.border = '2px solid #e63636'
 }
 
 function removeError(){
-    var field = document.getElementById('nameMeeting')
     field.style.border = ''
 }
+
+// Create Meeting
 
 function createLink(event) {
     event.preventDefault()
@@ -71,7 +79,14 @@ function createLink(event) {
     console.log(`Link gerado: https://meet.jit.si/${string + date + nameMeeting}`)
     console.log('-----')
 
-    linkResult.value = `https://meet.jit.si/${string + date + nameMeeting}`
+    var link = `https://meet.jit.si/${string + date + nameMeeting}`
+
+    linkResult.value = link
+    openLinkMeeting.href = link
+
+    // Style
+
     generator.style.display = 'none'
+    card.style.height = '100%'
     generatedLink.style.display = 'flex'
 }
