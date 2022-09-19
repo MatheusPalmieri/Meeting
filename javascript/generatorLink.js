@@ -1,51 +1,55 @@
-'use strict';
+// 'use strict';
 
-var nameMeeting = document.querySelector('#nameMeeting').value
-var linkResult = document.querySelector('#linkResult')
-var buttonOpen = document.getElementById('openLinkMeeting')
-var generator = document.getElementById('generator')
+var nameMeeting =   document.querySelector('#nameMeeting').value
+var field =         document.getElementById('nameMeeting')
+var linkResult =    document.querySelector('#linkResult')
+var buttonOpen =    document.getElementById('openLinkMeeting')
+var generator =     document.getElementById('generator')
 var generatedLink = document.getElementById('generatedLink')
-var form = document.getElementById('form')
-var card = document.getElementById('card')
+var form =          document.getElementById('form')
+var card =          document.getElementById('card')
 
-form.addEventListener('submit', createLink)
+var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+var removeCharacters = ['!','@', '#', '$', '%','¨','&','*', '(', ')', '-','_', '+', '.', ':', '"', "'", '=', '/', ' ']
+
+// Functions
+
+// Name Validated
+
+function verifyNameMeeting(nameMeeting) {
+    if(!regex.test(nameMeeting)) {
+        for(var i = 0; i < removeCharacters.length; i++) {
+            nameMeeting = nameMeeting.split(removeCharacters[i]).join("")
+        }
+    }
+
+    if (nameMeeting.length > 1) { return nameMeeting } else { return false }
+}
 
 function getRandomKey(size) {
-    var randomKey = ''
+    var randomKey
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
     for(var i = 0; i < size; i++) {
-        randomKey += characters.charAt(Math.floor(Math.random() * characters.length));
+        randomKey += characters.charAt(Math.floor(Math.random() * characters.length))
     }
 
-    return randomKey;
+    return randomKey
 }
 
-function getDate() {   
-    var year =      new Date().getFullYear().toString()
-    var month =     new Date().getMonth().toString()
-    var day =       new Date().getDay().toString()
-    var hours =     new Date().getHours().toString()
-    var minutes =   new Date().getMinutes().toString()
-    
-    // console.log('Data separa:', hours, minutes, day, month, year)
-    
+function getDate() {
+    var dateMoment = new Date()
+    var year =      dateMoment.getFullYear().toString()
+    var month =     dateMoment.getMonth().toString()
+    var day =       dateMoment.getDate().toString()
+    var hours =     dateMoment.getHours().toString()
+    var minutes =   dateMoment.getMinutes().toString()
     var formattedDate = hours + minutes + day + month + year
 
     return formattedDate
 }
 
-// Name Validated
-
-function verifyNameMeeting() {
-    var content = document.querySelector("#nameMeeting").value.length
-
-    if (content > 1 ) { return true } else { return false } 
-}
-
 // Style
-
-var field = document.getElementById('nameMeeting')
 
 function setError(){
     field.style.border = '2px solid #e63636'
@@ -60,33 +64,50 @@ function removeError(){
 function createLink(event) {
     event.preventDefault()
 
-    if(!verifyNameMeeting()) return setError()
+    var getNameMeeting = document.querySelector('#nameMeeting').value
+    var nameMeeting = verifyNameMeeting(getNameMeeting)
 
+    // Validate name
+    if(nameMeeting == false) return setError()
+
+    // Remove Erro
     removeError()
 
-    var string = getRandomKey(10)
+    // Gera Key aleatória
+    var randomKey = getRandomKey(10)
+
+    // Gera data
     var date = getDate()
-    var nameMeeting = document.querySelector('#nameMeeting').value
-    nameMeeting = nameMeeting.split(" ").join("")
+    
+    // Resultado
+    var link = `https://meet.jit.si/${randomKey + date + nameMeeting}`
 
-    // Apenas para desenvolvimento
-
-    console.log('-----')
-    console.log(`Nome da reunião: ${nameMeeting}`)
-    console.log(`String gerada: ${string}`)
-    console.log(`Data: ${date}`)
-    console.log('-----')
-    console.log(`Link gerado: https://meet.jit.si/${string + date + nameMeeting}`)
-    console.log('-----')
-
-    var link = `https://meet.jit.si/${string + date + nameMeeting}`
-
+    // Definir link nos Botões
     linkResult.value = link
     openLinkMeeting.href = link
 
     // Style
 
+    // Card inicial
     generator.style.display = 'none'
-    card.style.height = '100%'
+
+    // Altura do card
+    card.style.height = '332px'
+
+    // Card com resultado
     generatedLink.style.display = 'flex'
+
+    // Apenas para desenvolvimento
+
+    console.log('-----')
+    console.log(`Nome da reunião: ${nameMeeting}`)
+    console.log(`String gerada: ${randomKey}`)
+    console.log(`Data: ${date}`)
+    console.log('-----')
+    console.log(`Link gerado: https://meet.jit.si/${randomKey + date + nameMeeting}`)
+    console.log('-----')
 }
+
+// Start Application
+
+form.addEventListener('submit', createLink)
