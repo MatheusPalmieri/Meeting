@@ -79,7 +79,7 @@ body {
     border-radius: 5px;
     height: 50px;
     width: 300px;
-    transition: .5s;
+    transition: .7s;
 }
 
 .button:hover {
@@ -98,7 +98,11 @@ body {
     width: 300px;
     padding-top: 16px;
     padding-bottom: 16px;
-    transition: .5s;
+    transition: .7s;
+}
+
+.button-link:hover {
+    background-color: #0074e0;
 }
 
 /* -------------- */
