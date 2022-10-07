@@ -32,10 +32,10 @@
                             title="Nome da reunião não deve conter qualquer um destes caracteres: ?. &, :, ', &quot;, %, #." placeholder="ReuniãoFG"
                         >
 
-                        <!-- <p class="paragraph-moderated"><span>Ou <a href="https://moderated.jitsi.net" rel="noopener noreferrer" target="_blank">agende uma URL de reunião</a> antes, onde você é o único moderador.</span></p> -->
-
-                        <input type="submit" id="buttonSubmit" class="button" value="Gerar Link de Reunião">
+                        <input type="submit" id="buttonSubmit" class="input-button" value="Gerar Link de Reunião">
                     </form>
+
+                    <p class="paragraph-moderated"><span>Ou <a href="https://moderated.jitsi.net" rel="noopener noreferrer" target="_blank" id="linkModerated"><b>agende uma URL de reunião</b></a> antes, onde você é o único moderador.</span></p>
                 </article>
 
                 <!-- Result Link -->
@@ -80,8 +80,9 @@
     </main>
 
     <!-- Scripts -->
-    <script src="javascript/generatorLink.js"></script>
     <script src="javascript/functionButtons.js"></script>
+    <script src="javascript/generatorLink.js"></script>
+    <script src="javascript/meetingModerated.js"></script>
     <script src="javascript/historic.js"></script>
     <script src="javascript/footer.js"></script>
 

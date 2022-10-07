@@ -31,8 +31,8 @@ body {
     overflow: hidden;
     border-radius: 5px;
     padding: 15px;
-    width: 350px;
-    height: 200px;
+    width: 480px;
+    height: 220px;
     transition: height .5s;
 }
 
@@ -43,7 +43,7 @@ body {
     font-size: 1.42em;
 }
 
-.form {
+/* .form {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,7 +56,7 @@ body {
     color: #111;
     font-size: 16px;
     height: 50px;
-    width: 300px;
+    width: 430px;
     padding: 0 5px;
     border-radius: 5px;
     border: 3px solid #fff;
@@ -65,7 +65,41 @@ body {
 
 .name-meeting:focus {
     border: 2px solid #0074e0;
+} */
+.form {
+    outline: none;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+    height: 50px;
+    width: 430px;
+    padding: 0 5px;
+    border-radius: 5px;
+    border: 3px solid #fff;
+    transition: border-color .6s;
 }
+
+.name-meeting {
+
+
+}
+
+.input-button {
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    background-color: #0982f3;
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    transition: .7s;
+}
+
+.input-button:hover {
+    background-color: #0074e0;
+}
+
 
 /* Button Global */
 
@@ -103,6 +137,23 @@ body {
 
 .button-link:hover {
     background-color: #0074e0;
+}
+
+
+.paragraph-moderated {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+}
+
+.paragraph-moderated a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.paragraph-moderated a:hover {
+    text-decoration: underline;
 }
 
 /* -------------- */

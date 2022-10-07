@@ -27,7 +27,7 @@ function verifyNameMeeting(nameMeeting) {
 }
 
 function getRandomKey(size) {
-    var randomKey
+    var randomKey = ''
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
     for(var i = 0; i < size; i++) {
