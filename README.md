@@ -4,12 +4,11 @@
 
 <!-- Descrição -->
 
-<p align="center">Cria link a partir de nome e data, link criado com key aleatoria + nome da reunião para segurança.</p>
+<p align="center">Cria link a partir de nome e data, link criado com key aleatoria + nome da reunião para segurança. Projeto desenvolvido para empresa FG Empreendimetnso.</p>
 
 <!-- Súmario -->
 
 <p align="center">
- <a href="#features">Features</a> •
  <a href="#rodando-a-aplicação">Rodando A Aplicação</a> •
  <a href="#tecnologias">Tecnologias</a> •
  <a href="#autor">Autor</a>
@@ -22,15 +21,6 @@
 <p align="center">
  <a href="https://matheuspalmieri.github.io/Generator-Meeting/">Site Do Projeto</a>
 </p>
-
-<!-- Atualizações -->
-
-### Features
-
-- [ ] Local Storege
-- [ ] Ultimas Reuniões
-- [ ] Botão Compartilhar
-- [ ] Responsividade
 
 ---
 
