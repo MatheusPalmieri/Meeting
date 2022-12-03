@@ -19,14 +19,14 @@
 <h2 align="center">Site</h2>
 
 <p align="center">
- <a href="https://matheuspalmieri.github.io/Generator-Meeting/">Site Do Projeto</a>
+ <a href="https://matheuspalmieri.github.io/Meeting/">Site Do Projeto</a>
 </p>
 
 ---
 
 ### Rodando A Aplicação
 
-<a href="https://matheuspalmieri.github.io/Generator-Meeting/">Site Do Projeto</a>
+<a href="https://matheuspalmieri.github.io/Meeting/">Site Do Projeto</a>
 
 ---
 
