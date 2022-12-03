@@ -22,8 +22,6 @@
  <a href="https://matheuspalmieri.github.io/Meeting/">Site Do Projeto</a>
 </p>
 
-<br/>
-
 Create/Home Screen
 <img src="image/create.png" width="1280px" align="center">
 
