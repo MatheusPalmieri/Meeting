@@ -22,6 +22,8 @@
  <a href="https://matheuspalmieri.github.io/Meeting/">Site Do Projeto</a>
 </p>
 
+<img src="images/imagem.png" width="1366px" align="center">
+
 ---
 
 ### Rodando A Aplicação
@@ -47,5 +49,5 @@ Create for <b>`Matheus Palmieri`</b>👨‍💻
 <br>
 <br>
 
-<p align="center">🎉Projeto Generator Meeting Finalizado🚀</p>
+<p align="center">🎉Projeto Meeting Finalizado🚀</p>
 
