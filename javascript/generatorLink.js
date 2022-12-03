@@ -1,113 +1,130 @@
 // 'use strict';
 
-var nameMeeting =   document.querySelector('#nameMeeting').value
-var field =         document.getElementById('nameMeeting')
-var linkResult =    document.querySelector('#linkResult')
-var buttonOpen =    document.getElementById('openLinkMeeting')
-var generator =     document.getElementById('generator')
-var generatedLink = document.getElementById('generatedLink')
-var form =          document.getElementById('form')
-var card =          document.getElementById('card')
+const form = document.getElementById("form");
+const field = document.getElementById("nameMeeting");
 
-var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-var removeCharacters = ['!','@', '#', '$', '%','¨','&','*', '(', ')', '-','_', '+', '.', ':', '"', "'", '=', '/', ' ']
+console.log("===================");
+// console.log(nameMeeting);
+console.log("===================");
+
+const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+const removeCharacters = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "¨",
+  "&",
+  "*",
+  "(",
+  ")",
+  "-",
+  "_",
+  "+",
+  ".",
+  ":",
+  '"',
+  "'",
+  "=",
+  "/",
+  " ",
+];
 
 // Functions
 
 // Name Validated
-
-function verifyNameMeeting(nameMeeting) {
-    if(!regex.test(nameMeeting)) {
-        for(var i = 0; i < removeCharacters.length; i++) {
-            nameMeeting = nameMeeting.split(removeCharacters[i]).join("")
-        }
+const verifyNameMeeting = (nameMeeting) => {
+  if (!regex.test(nameMeeting)) {
+    for (let i = 0; i < removeCharacters.length; i++) {
+      nameMeeting = nameMeeting.split(removeCharacters[i]).join("");
     }
+  }
 
-    if (nameMeeting.length > 1) { return nameMeeting } else { return false }
-}
+  if (nameMeeting.length > 1) {
+    return nameMeeting;
+  } else {
+    return false;
+  }
+};
 
-function getRandomKey(size) {
-    var randomKey = ''
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+// Gerador de Caracteres aleátarios
+const getRandomKey = (size) => {
+  let randomKey = "";
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for(var i = 0; i < size; i++) {
-        randomKey += characters.charAt(Math.floor(Math.random() * characters.length))
-    }
+  for (let i = 0; i < size; i++) {
+    randomKey += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+  }
 
-    return randomKey
-}
+  return randomKey;
+};
 
-function getDate() {
-    var dateMoment = new Date()
-    var year =      dateMoment.getFullYear().toString()
-    var month =     dateMoment.getMonth().toString()
-    var day =       dateMoment.getDate().toString()
-    var hours =     dateMoment.getHours().toString()
-    var minutes =   dateMoment.getMinutes().toString()
-    var formattedDate = hours + minutes + day + month + year
+// Gerador de Data
+const getDate = () => {
+  let date = new Date();
+  let day = date.getDate().toString();
+  let month = (date.getMonth() + 1).toString();
+  let year = date.getFullYear().toString();
 
-    return formattedDate
-}
+  return day + month + year;
+};
 
 // Style
+const setError = () => {
+  field.style.border = "2px solid #e63636";
+};
 
-function setError(){
-    field.style.border = '2px solid #e63636'
-}
-
-function removeError(){
-    field.style.border = ''
-}
+const removeError = () => {
+  field.style.border = "";
+};
 
 // Create Meeting
+const createLink = (event) => {
+  event.preventDefault();
 
-function createLink(event) {
-    event.preventDefault()
+  const generator = document.getElementById("generator");
+  const card = document.getElementById("card");
+  const generatedLink = document.getElementById("generatedLink");
 
-    var getNameMeeting = document.querySelector('#nameMeeting').value
-    var nameMeeting = verifyNameMeeting(getNameMeeting)
+  const linkResult = document.getElementById("linkResult");
 
-    // Validate name
-    if(nameMeeting == false) return setError()
+  const name = document.getElementById("nameMeeting").value;
+  const nameVerified = verifyNameMeeting(name);
 
-    // Remove Erro
-    removeError()
+  // Validação de nome da Reunião
+  if (nameVerified === false) return setError();
 
-    // Gera Key aleatória
-    var randomKey = getRandomKey(10)
+  // Remove Erro
+  removeError();
 
-    // Gera data
-    var date = getDate()
-    
-    // Resultado
-    var link = `https://meet.jit.si/${randomKey + date + nameMeeting}`
+  // Gerar Key aleatória
+  let randomKey = getRandomKey(10);
 
-    // Definir link nos Botões
-    linkResult.value = link
-    openLinkMeeting.href = link
+  // Gerar data
+  let date = getDate();
 
-    // Style
+  // Resultado
+  let link = `https://meet.jit.si/FGEmpreendimentos${
+    date + randomKey
+  }/${nameVerified}`;
 
-    // Card inicial
-    generator.style.display = 'none'
+  // Definir link nos Botões
+  linkResult.value = link;
+  openLinkMeeting.href = link;
 
-    // Altura do card
-    card.style.height = '332px'
+  // Style
 
-    // Card com resultado
-    generatedLink.style.display = 'flex'
-
-    // Apenas para desenvolvimento
-
-    console.log('-----')
-    console.log(`Nome da reunião: ${nameMeeting}`)
-    console.log(`String gerada: ${randomKey}`)
-    console.log(`Data: ${date}`)
-    console.log('-----')
-    console.log(`Link gerado: https://meet.jit.si/${randomKey + date + nameMeeting}`)
-    console.log('-----')
-}
+  // Card inicial
+  generator.style.display = "none";
+  // Altura do card
+  card.style.height = "auto";
+  // Card com resultado
+  generatedLink.style.display = "flex";
+};
 
 // Start Application
-
-form.addEventListener('submit', createLink)
+form.addEventListener("submit", createLink);

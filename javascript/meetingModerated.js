@@ -9,6 +9,6 @@
     var link = document.getElementById('linkModerated')
     link.href = `https://moderated.jitsi.net/${href}`
 
-    console.log(link.href)
-    console.log(link)
+    // console.log(link.href)
+    // console.log(link)
 })()
