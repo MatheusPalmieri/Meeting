@@ -2,11 +2,6 @@
 
 const form = document.getElementById("form");
 const field = document.getElementById("nameMeeting");
-
-console.log("===================");
-// console.log(nameMeeting);
-console.log("===================");
-
 const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 const removeCharacters = [
   "!",
