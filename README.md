@@ -25,12 +25,12 @@
 <br/>
 
 Create/Home Screen
-<img src="images/create.png" width="1366px" align="center">
+<img src="image/create.png" width="1280px" align="center">
 
 <br/>
 
 Share Screen
-<img src="images/share.png" width="1366px" align="center">
+<img src="image/share.png" width="1280px" align="center">
 
 ---
 
