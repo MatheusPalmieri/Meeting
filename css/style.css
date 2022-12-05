@@ -66,13 +66,13 @@ body {
   color: #333;
   font-size: 16px;
   padding: 0 10px;
-  border: 2px solid #0982f3;
+  border: 1px solid #fff;
   border-radius: 5px;
   transition: border-color 0.6s;
 }
 
 .name-meeting:focus {
-  border: 2px solid #0074e0;
+  border: 1px solid #0074e0;
 }
 
 /* Button Generator */
@@ -181,6 +181,14 @@ body {
 
 /* Features */
 
-.recents {
+.recent {
   display: none;
 }
+
+.tab-navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+

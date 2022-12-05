@@ -26,7 +26,36 @@ const removeCharacters = [
   " ",
 ];
 
+var meetingStorage = [
+  {
+    name: "FG",
+    link: "https://meet.jit.si/FGEmpreendimentos5122022O7V3FMWSPQ/FG",
+  },
+];
+
 // Functions
+
+const setHistoric = ({ name, link }) => {
+  const meetingLocal = localStorage.getItem('meetingStorage')
+  
+  if(meetingLocal === null) {
+    let meeting = [{ name: name, link: link }]
+    localStorage.setItem('meetingStorage', JSON.stringify(meeting))
+  } else {
+    let meeting = [{ name: name, link: link }]
+
+    console.log("caso tenha")
+    console.log(meetingLocal)
+  }
+  console.log("Local: ", meetingLocal);
+
+
+
+  // meetingStorage = [...meetingStorage, { name: name, link: link }];
+  // console.log("Local After: ", meetingStorage);
+};
+
+// JSON.stringify(myBlogs)
 
 // Name Validated
 const verifyNameMeeting = (nameMeeting) => {
@@ -106,6 +135,12 @@ const createLink = (event) => {
   let link = `https://meet.jit.si/FGEmpreendimentos${
     date + randomKey
   }/${nameVerified}`;
+
+  // console.log(name)
+  // console.log(date)
+  // console.log(link)
+
+  setHistoric({ name, link });
 
   // Definir link nos Botões
   linkResult.value = link;

@@ -15,14 +15,25 @@
   <body>
     <main class="container">
       <section class="card" id="card">
-        <!-- Card -->
-
         <div class="content">
-          <h1 class="title">Prepare-se para sua Reunião.</h1>
+          <!-- Tab Navigation -->
 
-          <!-- Generator Link -->
+          <nav class="tab-navigation">
+            <div>
+              <input type="radio" name="tab" id="tabCreate" checked />
+              <label for="tabCreate">create</label>
+            </div>
+
+            <div>
+              <input type="radio" name="tab" id="tabRecent" />
+              <label for="tabRecent">recent</label>
+            </div>
+          </nav>
+
+          <!-- Card -->
 
           <article class="generator" id="generator">
+            <!-- Generator Link -->
             <form id="form" class="form" autocomplete="off">
               <input
                 aria-label="Campo nome reunião"
@@ -42,20 +53,29 @@
                 value="Gerar Link"
               />
             </form>
+          </article>
 
-            <p class="paragraph-moderated">
-              <span
-                >Ou
-                <a
-                  href="https://moderated.jitsi.net"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  id="linkModerated"
-                  ><b>agende uma URL de reunião</b></a
-                >
-                antes, onde você é o único moderador.</span
-              >
-            </p>
+          <!-- Recent -->
+
+          <article class="recent" id="recent">
+            <table>
+              <thead>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Link</th>
+              </thead>
+              <tbody>
+                <tr>
+                  TI
+                </tr>
+                <tr>
+                  05/12/2022
+                </tr>
+                <tr>
+                  meet/fgempreendimentos/ti
+                </tr>
+              </tbody>
+            </table>
           </article>
 
           <!-- Result Link -->
@@ -87,24 +107,6 @@
         </div>
       </section>
 
-      <section class="recents">
-        <article>
-          <table>
-            <thead>
-              <tr>
-                <th>Ultimas Reuniões</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Reunião TI</td>
-                <td>01/09/2022</td>
-              </tr>
-            </tbody>
-          </table>
-        </article>
-      </section>
-
       <footer class="footer">
         <p id="footer">
           <!-- inject for js -->
@@ -113,10 +115,9 @@
     </main>
 
     <!-- Scripts -->
+    <script src="javascript/tabNavigation.js"></script>
     <script src="javascript/functionButtons.js"></script>
     <script src="javascript/generatorLink.js"></script>
-    <!-- <script src="javascript/meetingModerated.js"></script> -->
-    <script src="javascript/historic.js"></script>
     <script src="javascript/footer.js"></script>
   </body>
 </html>
