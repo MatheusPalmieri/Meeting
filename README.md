@@ -1,10 +1,10 @@
 <!-- Título -->
 
-<h1 align="center">Criador de link para reunião.</h1>
+<h1 align="center">Branch de desenvolvimento e features Meeting</h1>
 
 <!-- Descrição -->
 
-<p align="center">Cria link a partir de nome e data, link criado com key aleatoria + nome da reunião para segurança. Projeto desenvolvido para empresa FG Empreendimetnso.</p>
+<p align="center">Branch criada para testes em produção com usuários e prévia das novas features.</p>
 
 <!-- Súmario -->
 
@@ -55,5 +55,5 @@ Create for <b>`Matheus Palmieri`</b>👨‍💻
 <br>
 <br>
 
-<p align="center">🎉Projeto Meeting Finalizado🚀</p>
+<p align="center">🎉Projeto Meeting com Novas FEATURES🚀</p>
 
