@@ -28,21 +28,9 @@ const removeCharacters = [
 
 // Functions
 
-const padTo2Digits = (number) => {
-  return number.toString().padStart(2, "0");
-};
-
-const formatDate = (date) => {
-  return [
-    padTo2Digits(date.getDate()),
-    padTo2Digits(date.getMonth() + 1),
-    date.getFullYear(),
-  ].join("/");
-};
-
 const setHistoric = ({ name, link }) => {
   const meetingLocal = localStorage.getItem("meetingStorage");
-  const date = formatDate(new Date());
+  const date = new Date().toLocaleDateString("pt-BR");
 
   if (meetingLocal === null) {
     // Definindo o objeto
@@ -105,6 +93,7 @@ const createLink = (event) => {
   const generator = document.getElementById("generator");
   const card = document.getElementById("card");
   const generatedLink = document.getElementById("generatedLink");
+  const tab = document.getElementById("tab");
   const linkResult = document.getElementById("linkResult");
   const name = document.getElementById("nameMeeting").value;
   const nameVerified = verifyNameMeeting(name);
@@ -130,6 +119,7 @@ const createLink = (event) => {
   // Style
 
   // Card inicial
+  tab.style.display = "none";
   generator.style.display = "none";
   // Altura do card
   card.style.height = "auto";

@@ -1,5 +1,8 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", "Arial", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -17,28 +20,24 @@ body {
   flex-direction: column;
 }
 
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .card {
+  width: 500px;
+  height: 150px;
   background-color: #328990;
   overflow: hidden;
   border-radius: 5px;
   padding: 20px;
-  width: 480px;
-  height: auto;
   transition: height 0.5s;
+  /* Centralização */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.title {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 40px;
-  font-size: 1.42em;
+.content {
+  background-color: #26949c;
+  background-color: red;
 }
 
 /* Form Background */
@@ -172,11 +171,15 @@ body {
   transition: all 0.2s;
 }
 
+/* Footer */
+
 .footer {
   font-size: 14px;
+  color: #bbb;
   position: absolute;
   bottom: 20px;
-  color: #bbb;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 /* Features */
@@ -184,11 +187,3 @@ body {
 .recent {
   display: none;
 }
-
-.tab-navigation {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-

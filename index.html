@@ -15,23 +15,21 @@
   <body>
     <main class="container">
       <section class="card" id="card">
+        <!-- Tab Navigation -->
+        <nav class="tab" id="tab">
+          <div>
+            <input type="radio" name="tab" id="tabCreate" checked />
+            <label for="tabCreate">create</label>
+          </div>
+
+          <div>
+            <input type="radio" name="tab" id="tabRecent" />
+            <label for="tabRecent">recent</label>
+          </div>
+        </nav>
+
         <div class="content">
-          <!-- Tab Navigation -->
-
-          <nav class="tab-navigation">
-            <div>
-              <input type="radio" name="tab" id="tabCreate" checked />
-              <label for="tabCreate">create</label>
-            </div>
-
-            <div>
-              <input type="radio" name="tab" id="tabRecent" />
-              <label for="tabRecent">recent</label>
-            </div>
-          </nav>
-
-          <!-- Card -->
-
+          <!-- Create -->
           <article class="generator" id="generator">
             <!-- Generator Link -->
             <form id="form" class="form" autocomplete="off">
@@ -56,7 +54,6 @@
           </article>
 
           <!-- Recent -->
-
           <article class="recent" id="recent">
             <table>
               <thead>
@@ -71,7 +68,6 @@
           </article>
 
           <!-- Result Link -->
-
           <article class="generated-link" id="generatedLink">
             <input
               type="text"
@@ -98,18 +94,18 @@
           </article>
         </div>
       </section>
-
-      <footer class="footer">
-        <p id="footer">
-          <!-- inject for js -->
-        </p>
-      </footer>
     </main>
+
+    <footer class="footer">
+      <p id="footer">
+        <!-- inject for js -->
+      </p>
+    </footer>
 
     <!-- Scripts -->
     <script src="javascript/tabNavigation.js"></script>
     <script src="javascript/functionButtons.js"></script>
-    <script src="javascript/generatorLink.js"></script>
+    <script src="javascript/generator.js"></script>
     <script src="javascript/recent.js"></script>
     <script src="javascript/footer.js"></script>
   </body>

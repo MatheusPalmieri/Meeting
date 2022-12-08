@@ -9,7 +9,7 @@ allMeetings.map((meeting) => {
   tr.innerHTML = `
         <td>${meeting.name}</td>
         <td>${meeting.date}</td>
-        <td>${meeting.link}</td>
+        <td><a href="${meeting.link}" target="_blank">Open</a></td>
     `;
 
   table.appendChild(tr);

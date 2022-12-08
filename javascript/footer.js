@@ -1,4 +1,4 @@
-var footer = document.getElementById('footer')
-var date = new Date().getFullYear()
+const footer = document.getElementById("footer");
+const date = new Date().getFullYear();
 
-footer.innerHTML = `FG Empreendimentos &copy; ${date} - Todos os direitos reservados`
+footer.innerHTML = `FG Empreendimentos &copy; ${date} - Todos os direitos reservados`;
