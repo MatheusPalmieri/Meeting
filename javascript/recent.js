@@ -3,22 +3,20 @@
 const table = document.getElementById("tbodyRecent");
 const allMeetings = JSON.parse(localStorage.getItem("meetingStorage"));
 
-const updateMeetings = (allMeetings) => {
-  const orderMeetings = allMeetings.reverse();
-
-  if (orderMeetings.length > 5) {
-    orderMeetings.pop();
-    localStorage.setItem("meetingStorage", JSON.stringify(orderMeetings));
-    return orderMeetings;
+const removeLastMeeting = (allMeetings) => {
+  if (allMeetings.length > 5) {
+    allMeetings.pop();
+    localStorage.setItem("meetingStorage", JSON.stringify(allMeetings));
+    return allMeetings;
   } else {
-    return orderMeetings;
+    return allMeetings;
   }
 };
 
 if (allMeetings) {
-  const orderMeetings = updateMeetings(allMeetings);
+  const updateMeetings = removeLastMeeting(allMeetings);
 
-  orderMeetings.map((meeting) => {
+  updateMeetings.map((meeting) => {
     let tr = document.createElement("tr");
 
     tr.innerHTML = `

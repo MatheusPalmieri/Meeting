@@ -41,7 +41,7 @@ const setHistoric = ({ name, link }) => {
     // Resgatando todas as reuniões salvas no localStorage
     let allMeetings = JSON.parse(localStorage.getItem("meetingStorage"));
     // Salvandos todas em um único array
-    let meeting = [...allMeetings, { name: name, link: link, date: date }];
+    let meeting = [{ name: name, link: link, date: date }, ...allMeetings];
     // Salvando no localStorage
     localStorage.setItem("meetingStorage", JSON.stringify(meeting));
   }
