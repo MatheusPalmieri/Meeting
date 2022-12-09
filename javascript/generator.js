@@ -34,14 +34,17 @@ const setHistoric = ({ name, link }) => {
 
   if (meetingLocal === null) {
     // Definindo o objeto
-    let meeting = [{ name: name, link: link, date: date }];
+    const meeting = [{ name: name, link: link, date: date }];
+
     // Salvando no localStorage
     localStorage.setItem("meetingStorage", JSON.stringify(meeting));
   } else {
     // Resgatando todas as reuniões salvas no localStorage
-    let allMeetings = JSON.parse(localStorage.getItem("meetingStorage"));
+    const allMeetings = JSON.parse(localStorage.getItem("meetingStorage"));
+
     // Salvandos todas em um único array
-    let meeting = [{ name: name, link: link, date: date }, ...allMeetings];
+    const meeting = [{ name: name, link: link, date: date }, ...allMeetings];
+
     // Salvando no localStorage
     localStorage.setItem("meetingStorage", JSON.stringify(meeting));
   }
